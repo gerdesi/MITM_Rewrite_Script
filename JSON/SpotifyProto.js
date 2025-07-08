@@ -9,7 +9,7 @@ if(resStatus !== 200) {
     const method = $request.method;
     const postMethod = "POST";
     const isQuantumultX = typeof $task !== "undefined";
-    const binaryBody = isQuanX ? new Uint8Array($response.bodyBytes) : $response.body;
+    const binaryBody = isQuantumultX ? new Uint8Array($response.bodyBytes) : $response.body;
     let accountAttributesMapObj;
     let body;
     if(url.includes("bootstrap/v1/bootstrap") && method === postMethod){
@@ -62,4 +62,13 @@ function processMapObj(accountAttributesMapObj){
     accountAttributesMapObj['com.spotify.madprops.use.ucs.product.state'] = {boolValue : true};
     delete accountAttributesMapObj['ad-use-adlogic'];
     delete accountAttributesMapObj['ad-catalogues'];
+    accountAttributesMapObj['ab-test-group'] = {longValue : 67};
+    accountAttributesMapObj['ab-mobile-discover'] = {longValue : 0};
+    accountAttributesMapObj['ab-navigation-menu'] = {longValue : 17};
+    accountAttributesMapObj['ab-sugarpills-sanity-check'] = {stringValue : '0'};
+    accountAttributesMapObj['ab-nft-navigation-menu'] = {stringValue : '3'};
+    accountAttributesMapObj['ab-desktop-hide-follow'] = {boolValue : false};
+    accountAttributesMapObj['social-session'] = {boolValue : true};
+    accountAttributesMapObj['head-files-url'] = {stringValue : 'https://heads-fa.scdn.co/head/{file_id}'};
+    accountAttributesMapObj['publish-playlist'] = {boolValue : true};
 }
